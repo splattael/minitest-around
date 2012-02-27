@@ -10,11 +10,6 @@ class TestWithoutAround < MiniTest::Unit::TestCase
 end
 
 class TestWithAround < MiniTest::Unit::TestCase
-  def run_test(name)
-    p :here => name
-    defined?(around) ? around { |*args| __send__(name, *args) } : __send__(name)
-  end
-
   def around
     yield "string"
   end
@@ -26,18 +21,18 @@ end
 
 class SpecWithAround < MiniTest::Spec
   describe "Without around" do
-    it "works" do
+    it "works w/o defining parameters" do
       assert true
     end
+  end
 
-    describe "with around" do
-      def around
-        yield "string"
-      end
+  describe "with around" do
+    def around
+      yield "string"
+    end
 
-      it "works" do |name|
-        assert_equal "string", name
-      end
+    it "passes string argument" do |name|
+      assert_equal "string", name
     end
   end
 end
