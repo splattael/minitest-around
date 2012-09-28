@@ -8,6 +8,16 @@ end
 
 class MiniTest::Unit::TestCase
   def run_test(name)
-    defined?(around) ? around { |*args| __send__(name, *args) } : __send__(name)
+    if defined?(around)
+      around { |*args| __send__(name, *args) }
+    else
+      __send__(name)
+    end
+  end
+end
+
+class MiniTest::Spec
+  def self.around(&block)
+    define_method(:around, &block)
   end
 end

@@ -25,9 +25,7 @@ class SpecWithAround < MiniTest::Spec
   end
 
   describe "with around" do
-    def around
-      yield "string"
-    end
+    around { "string" }
 
     it "passes string argument" do |name|
       assert_equal "string", name
