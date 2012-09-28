@@ -8,6 +8,10 @@ Gem[https://rubygems.org/gems/minitest-around] |
 Source[https://github.com/splattael/minitest-around] |
 RDoc[http://rubydoc.info/github/splattael/minitest-around/master/file/README.rdoc]
 
+== Installation
+
+  gem install minitest-around
+
 == Usage
 
 === Unit tests
