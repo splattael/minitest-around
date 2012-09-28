@@ -28,12 +28,12 @@ class SpecWithAround < MiniTest::Spec
     around { "string" }
 
     it "passes string argument" do |name|
-      assert_equal "string", name
+      name.must_equal "string"
     end
 
     describe "nested" do
       it "string still around" do |name|
-        assert_equal "string", name
+        name.must_equal "string"
       end
     end
   end
