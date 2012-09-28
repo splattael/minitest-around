@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = MiniTest::Around::VERSION
   s.authors     = ["Peter Suschlik"]
   s.email       = ["peter-minitest-around@suschlik.de"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/splattael/minitest-around"
   s.summary     = %q{Around block for minitest.}
   s.description = %q{Alternative for setup/teardown dance.}
 
