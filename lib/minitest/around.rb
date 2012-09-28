@@ -1,10 +1,4 @@
-require 'minitest/unit'
-
-module MiniTest
-  module Around
-    VERSION = "0.0.1"
-  end
-end
+require 'minitest/around/version'
 
 class MiniTest::Unit::TestCase
   def run_test(name)
