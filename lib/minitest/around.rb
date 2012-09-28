@@ -13,7 +13,11 @@ end
 class MiniTest::Spec
   def self.around(&outer)
     define_method(:around) do |&inner|
-      inner.call *outer.call
+      if outer.arity == 1
+        outer.call(inner)
+      else
+        inner.call *outer.call
+      end
     end
   end
 end

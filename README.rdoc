@@ -1,0 +1,83 @@
+= minitest-around {<img src="https://secure.travis-ci.org/splattael/minitest-around.png?branch=master" alt="Build Status" />}[http://travis-ci.org/splattael/minitest-around]
+
+Around block for minitest.
+
+Alternative for setup/teardown dance.
+
+Gem[https://rubygems.org/gems/minitest-around] |
+Source[https://github.com/splattael/minitest-around] |
+RDoc[http://rubydoc.info/github/splattael/minitest-around/master/file/README.rdoc]
+
+== Usage
+
+=== Unit tests
+
+  require 'minitest/autorun'
+  require 'minitest/around'
+
+  class MutexTest < MiniTest::Unit::TestCase
+    def around(&block)
+      Mutex.new.synchronize(&block)
+    end
+
+    def test_synchronized
+      # ...
+    end
+  end
+
+  class PassArgsTest < MiniTest::Unit::TestCase
+    def around
+      yield 1, 2
+    end
+
+    def test_passes_args(a, b)
+      assert_equal 3, a + b
+    end
+  end
+
+=== Spec
+
+  require 'minitest/autorun'
+  require 'minitest/around'
+
+  describe "Mutex" do
+    around do |test|
+      Mutex.new.synchronize(&test)
+    end
+
+    it "synchronized" do
+      # ...
+    end
+
+    describe "pass args" do
+      around do
+        # No block arg "test",
+        [ 1, 2 ]
+      end
+
+      it "passes args" do |a, b|
+        (a + b).must_equal 3
+      end
+    end
+  end
+
+== Caveats
+
+Test bodies won't be run if you don't *yield* inside +around+.
+
+== Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Added some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
+
+== Test
+
+  bundle exec rake test
+
+== Release
+
+  edit lib/minitest/around/version.rb
+  rake release
