@@ -1,5 +1,3 @@
-require 'rubygems'
-require 'bundler/setup'
 require 'minitest/autorun'
 require 'minitest/around'
 
@@ -33,6 +31,12 @@ class SpecWithAround < MiniTest::Spec
 
     it "passes string argument" do |name|
       assert_equal "string", name
+    end
+
+    describe "nested" do
+      it "string still around" do |name|
+        assert_equal "string", name
+      end
     end
   end
 end
