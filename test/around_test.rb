@@ -17,6 +17,17 @@ class TestWithAround < MiniTest::Unit::TestCase
   end
 end
 
+class TestWithMultipleArgs < MiniTest::Unit::TestCase
+  def around
+    yield 1, 2
+  end
+
+  def test_passes_multiple_args(a, b)
+    assert_equal 1, a
+    assert_equal 2, b
+  end
+end
+
 class SpecWithAround < MiniTest::Spec
   describe "Without around" do
     it "works w/o defining parameters" do
@@ -32,8 +43,17 @@ class SpecWithAround < MiniTest::Spec
     end
 
     describe "nested" do
-      it "string still around" do |name|
+      it "string is still around" do |name|
         name.must_equal "string"
+      end
+    end
+
+    describe "with multiple args" do
+      around { [ 1, 2 ] }
+
+      it "passes multiple args" do |a, b|
+        a.must_equal 1
+        b.must_equal 2
       end
     end
   end
