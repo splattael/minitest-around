@@ -39,6 +39,3 @@ class TestWithMultipleArgs < MiniTest::Unit::TestCase
     assert_equal 2, b
   end
 end
-
-class SpecWithAround < MiniTest::Spec
-end
