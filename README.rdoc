@@ -17,7 +17,7 @@ RDoc[http://rubydoc.info/github/splattael/minitest-around/master/file/README.rdo
 === Unit tests
 
   require 'minitest/autorun'
-  require 'minitest/around'
+  require 'minitest/around/unit'
   require 'thread'
 
   class MutexTest < MiniTest::Unit::TestCase
@@ -43,7 +43,7 @@ RDoc[http://rubydoc.info/github/splattael/minitest-around/master/file/README.rdo
 === Spec
 
   require 'minitest/autorun'
-  require 'minitest/around'
+  require 'minitest/around/spec'
   require 'thread'
 
   describe "Mutex" do
