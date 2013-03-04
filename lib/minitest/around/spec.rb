@@ -1,3 +1,5 @@
+require 'minitest/spec'
+
 class MiniTest::Spec
   def self.around(&outer)
     define_method(:around) do |&inner|

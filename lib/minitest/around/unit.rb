@@ -1,3 +1,5 @@
+require 'minitest/unit'
+
 class MiniTest::Unit::TestCase
   def run_test(name)
     if defined?(around)
