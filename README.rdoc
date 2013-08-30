@@ -73,6 +73,10 @@ RDoc[http://rubydoc.info/github/splattael/minitest-around/master/file/README.rdo
 
 Test bodies won't be run if you don't *yield* inside +around+.
 
+=== Nesting
+
+Around block don't nest correctly. Please see issue #2 for more info and workaround[https://github.com/splattael/minitest-around/issues/2#issuecomment-15769151]
+
 == Contributing
 
 1. Fork it
