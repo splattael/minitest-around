@@ -2,7 +2,7 @@
 
 {<img src="https://secure.travis-ci.org/splattael/minitest-around.png?branch=master" alt="Build Status" />}[http://travis-ci.org/splattael/minitest-around] {<img src="https://badge.fury.io/rb/minitest-around.png" alt="Gem Version" />}[http://badge.fury.io/rb/minitest-around] {<img src="https://codeclimate.com/github/splattael/minitest-around.png" />}[https://codeclimate.com/github/splattael/minitest-around]
 
-Around block for minitest.
+Around block for minitest 4.7.X.
 
 Alternative for setup/teardown dance.
 
@@ -72,6 +72,10 @@ RDoc[http://rubydoc.info/github/splattael/minitest-around/master/file/README.rdo
 == Caveats
 
 Test bodies won't be run if you don't *yield* inside +around+.
+
+=== Minitest 4.7.X only
+
++minitest-around+ currently supports only +minitest+ 4.7.X.
 
 === Nesting
 
