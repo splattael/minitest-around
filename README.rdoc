@@ -1,4 +1,6 @@
-= minitest-around {<img src="https://secure.travis-ci.org/splattael/minitest-around.png?branch=master" alt="Build Status" />}[http://travis-ci.org/splattael/minitest-around]
+= minitest-around
+
+{<img src="https://secure.travis-ci.org/splattael/minitest-around.png?branch=master" alt="Build Status" />}[http://travis-ci.org/splattael/minitest-around] [http://badge.fury.io/rb/minitest-around] {<img src="https://codeclimate.com/github/splattael/minitest-around.png" />}
 
 Around block for minitest.
 
