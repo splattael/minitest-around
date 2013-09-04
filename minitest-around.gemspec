@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/splattael/minitest-around"
   s.summary     = %q{Around block for minitest.}
   s.description = %q{Alternative for setup/teardown dance.}
+  s.license     = 'MIT'
 
   s.rubyforge_project = "minitest-around"
 
