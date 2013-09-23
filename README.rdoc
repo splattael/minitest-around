@@ -22,7 +22,7 @@ RDoc[http://rubydoc.info/github/splattael/minitest-around/master/file/README.rdo
   require 'minitest/around/unit'
   require 'thread'
 
-  class MutexTest < MiniTest::Unit::TestCase
+  class MutexTest < Minitest::Test
     def around(&block)
       Mutex.new.synchronize(&block)
     end
@@ -32,7 +32,7 @@ RDoc[http://rubydoc.info/github/splattael/minitest-around/master/file/README.rdo
     end
   end
 
-  class PassArgsTest < MiniTest::Unit::TestCase
+  class PassArgsTest < Minitest::Test
     def around
       yield 1, 2
     end
@@ -73,9 +73,9 @@ RDoc[http://rubydoc.info/github/splattael/minitest-around/master/file/README.rdo
 
 Test bodies won't be run if you don't *yield* inside +around+.
 
-=== Minitest 4.7.X only
+=== Minitest 5.X only
 
-+minitest-around+ currently supports only +minitest+ 4.7.X.
++minitest-around+ currently supports only +minitest+ 5.X.
 
 === Nesting
 
