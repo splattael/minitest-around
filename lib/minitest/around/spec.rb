@@ -1,6 +1,6 @@
 require 'minitest/spec'
 
-class MiniTest::Spec
+class Minitest::Spec
   def self.around(&outer)
     define_method(:around) do |&inner|
       if outer.arity == 1
