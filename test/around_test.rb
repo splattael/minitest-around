@@ -1,13 +1,13 @@
 require 'minitest/autorun'
 require 'minitest/around'
 
-class TestWithoutAround < MiniTest::Unit::TestCase
+class TestWithoutAround < Minitest::Test
   def test_no_around_defined
     assert true
   end
 end
 
-class TestWithoutArgs < MiniTest::Unit::TestCase
+class TestWithoutArgs < Minitest::Test
   def around
     $before = true
     yield
@@ -19,7 +19,7 @@ class TestWithoutArgs < MiniTest::Unit::TestCase
   end
 end
 
-class TestWithSingleArg < MiniTest::Unit::TestCase
+class TestWithSingleArg < Minitest::Test
   def around
     yield "string"
   end
@@ -29,7 +29,7 @@ class TestWithSingleArg < MiniTest::Unit::TestCase
   end
 end
 
-class TestWithMultipleArgs < MiniTest::Unit::TestCase
+class TestWithMultipleArgs < Minitest::Test
   def around
     yield 1, 2
   end
