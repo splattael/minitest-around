@@ -1,7 +1,10 @@
 require 'minitest/spec'
 
-class Minitest::Spec
-  def self.around(&outer)
+require 'minitest/around/version'
+require 'minitest/around/unit'
+
+module Minitest::Spec::DSL
+  def around(&outer)
     define_method(:around) do |&inner|
       if outer.arity == 1
         outer.call(inner)

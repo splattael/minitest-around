@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require 'minitest/around'
+require 'minitest/around/spec'
 
 describe "MiniTest Around" do
   describe "without around" do

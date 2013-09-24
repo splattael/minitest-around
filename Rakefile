@@ -4,9 +4,18 @@ desc 'Default: run unit tests.'
 task :default => :test
 
 # Test
+TEST_FILES = FileList.new('test/*_{test,spec}.rb')
+
+desc "Run all tests"
+task :test do
+  TEST_FILES.each do |test_file|
+    sh "bundle", "exec", "rake", "test:isolated", "TEST=#{test_file}"
+  end
+end
+
 require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.test_files = FileList.new('test/*_{test,spec}.rb')
+Rake::TestTask.new(:"test:isolated") do |test|
+  test.test_files = TEST_FILES
   test.libs << 'test'
   test.verbose = true
 end

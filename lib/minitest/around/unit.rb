@@ -1,4 +1,5 @@
 require 'minitest/unit'
+require 'minitest/around/version'
 
 class Minitest::Test
   def send(name)
