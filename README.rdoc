@@ -50,6 +50,7 @@ end
 require 'minitest/autorun'
 require 'minitest/around/spec'
 require 'thread'
+require 'tmpdir'
 
 describe "Mutex" do
   around do |test|
@@ -58,6 +59,20 @@ describe "Mutex" do
 
   it "synchronized" do
     # ...
+  end
+
+  describe "inside new directory" do
+    around do |test|
+      Dir.mktmpdir do |dir|
+        Dir.chdir(dir) do
+          test.call
+        end
+      end
+    end
+
+    it "is in new directory" do
+      # ...
+    end
   end
 
   describe "pass args" do
