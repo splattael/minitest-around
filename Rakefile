@@ -28,3 +28,12 @@ RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.main     = 'README.rdoc'
   rdoc.rdoc_files.include('README.rdoc', 'LICENSE', 'lib/**/*.rb')
 end
+
+# Examples
+EXAMPLES = FileList["examples/*.rb"]
+desc "Run all examples"
+task :"test:examples" do
+  EXAMPLES.each do |example|
+    sh "bundle", "exec", "ruby", example
+  end
+end
