@@ -16,6 +16,8 @@ RDoc[http://rubydoc.info/github/splattael/minitest-around/master/file/README.rdo
 
 == Usage
 
+See examples[https://github.com/splattael/minitest-around/tree/master/examples] directory for some example usage..
+
 === Unit tests
 
   require 'minitest/autorun'
@@ -46,26 +48,20 @@ RDoc[http://rubydoc.info/github/splattael/minitest-around/master/file/README.rdo
 
   require 'minitest/autorun'
   require 'minitest/around/spec'
-  require 'thread'
+  require 'tmpdir'
 
-  describe "Mutex" do
+  describe "inside new directory" do
     around do |test|
-      Mutex.new.synchronize(&test)
+      Dir.mktmpdir do |dir|
+        $dir = dir
+        Dir.chdir(dir) do
+          test.call
+        end
+      end
     end
 
-    it "synchronized" do
-      # ...
-    end
-
-    describe "pass args" do
-      around do
-        # No block arg "test",
-        [ 1, 2 ]
-      end
-
-      it "passes args" do |a, b|
-        (a + b).must_equal 3
-      end
+    it "is in new directory" do
+      assert_equal $dir, Dir.pwd
     end
   end
 
