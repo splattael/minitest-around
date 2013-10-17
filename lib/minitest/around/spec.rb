@@ -8,11 +8,7 @@ class MiniTest::Spec
     def around(&outer)
       define_method(:around) do |&inner|
         if outer.arity == 1
-          if defined?(super)
-            super() { outer.call(inner) }
-          else
-            outer.call(inner)
-          end
+          super() { outer.call(inner) }
         else
           inner.call *outer.call
         end
