@@ -13,7 +13,7 @@ describe 'Outer' do
   end
   around do |test|
     $var << :begin
-    test.yield
+    test.call
     $var << :end
   end
 
@@ -26,7 +26,7 @@ describe 'Outer' do
     end
     around do |test|
       $var << :ibegin
-      test.yield
+      test.call
       $var << :iend
     end
     it 'testing' do
