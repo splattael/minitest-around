@@ -11,13 +11,3 @@ class MutexTest < MiniTest::Unit::TestCase
     # ...
   end
 end
-
-class PassArgsTest < MiniTest::Unit::TestCase
-  def around
-    yield 1, 2
-  end
-
-  def test_passes_args(a, b)
-    assert_equal 3, a + b
-  end
-end

@@ -18,24 +18,3 @@ class TestWithoutArgs < MiniTest::Unit::TestCase
     assert_equal true, $before
   end
 end
-
-class TestWithSingleArg < MiniTest::Unit::TestCase
-  def around
-    yield "string"
-  end
-
-  def test_around_passes_string(string)
-    assert_equal "string", string
-  end
-end
-
-class TestWithMultipleArgs < MiniTest::Unit::TestCase
-  def around
-    yield 1, 2
-  end
-
-  def test_passes_multiple_args(a, b)
-    assert_equal 1, a
-    assert_equal 2, b
-  end
-end

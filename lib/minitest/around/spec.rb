@@ -7,11 +7,7 @@ class MiniTest::Spec
   module DSL
     def around(&outer)
       define_method(:around) do |&inner|
-        if outer.arity == 1
-          super() { outer.call(inner) }
-        else
-          inner.call *outer.call
-        end
+        super() { outer.call(inner) }
       end
     end
   end
