@@ -4,7 +4,7 @@ require 'minitest/around/version'
 
 Gem::Specification.new do |s|
   s.name        = "minitest-around"
-  s.version     = MiniTest::Around::VERSION
+  s.version     = Minitest::Around::VERSION
   s.authors     = ["Peter Suschlik"]
   s.email       = ["peter-minitest-around@suschlik.de"]
   s.homepage    = "https://github.com/splattael/minitest-around"
@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency 'minitest', '~> 4.7.5'
+  s.add_dependency 'minitest', '~> 5.0'
 
   s.add_development_dependency 'rdoc'
 end
