@@ -1,6 +1,3 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 
-gem 'rake'
-
-# Specify your gem's dependencies in minitest-around.gemspec
-gemspec
+gemspec # Specify dependencies in minitest-around.gemspec
