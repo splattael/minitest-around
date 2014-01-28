@@ -81,6 +81,16 @@ for +minitest+ 4.7.X support.
 
 MIT License[http://www.opensource.org/licenses/mit-license.php]
 
+== Authors
+
+* Peter Suschlik (https://github.com/splattael)
+
+== Contributors[https://github.com/splattael/minitest-around/graphs/contributors]
+
+* Michael Grosser (https://github.com/grosser)
+* Rick Martínez (https://github.com/rickmzp)
+* Philip Nelson (https://github.com/pnelson)
+
 == Contributing
 
 1. Fork it
