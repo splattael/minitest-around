@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/around/unit'
 
-class TestWithoutAround < MiniTest::Unit::TestCase
+class TestWithoutAround < Minitest::Test
   def test_no_around_defined
     assert true
   end

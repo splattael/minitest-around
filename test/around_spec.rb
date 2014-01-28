@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/around/spec'
 
-describe "MiniTest Around" do
+describe "Minitest Around" do
   describe "without around" do
     it "works w/o defining parameters" do
       assert true

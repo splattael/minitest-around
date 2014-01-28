@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'minitest/around'
 require 'thread'
 
-class MutexTest < MiniTest::Unit::TestCase
+class MutexTest < Minitest::Test
   def around(&block)
     Mutex.new.synchronize(&block)
   end
@@ -12,7 +12,7 @@ class MutexTest < MiniTest::Unit::TestCase
   end
 end
 
-class PassArgsTest < MiniTest::Unit::TestCase
+class PassArgsTest < Minitest::Test
   def around
     yield 1, 2
   end
