@@ -3,10 +3,10 @@ require 'minitest/around/version'
 
 class MiniTest::Unit::TestCase
   def run_test(name)
-    around { |*args| __send__(name, *args) }
+    around { __send__(name) }
   end
 
-  def around(*args)
-    yield *args
+  def around
+    yield
   end
 end

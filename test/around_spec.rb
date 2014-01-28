@@ -19,27 +19,4 @@ describe "MiniTest Around" do
       $before.must_equal true
     end
   end
-
-  describe "with single arg" do
-    around { "string" }
-
-    it "passes string argument" do |name|
-      name.must_equal "string"
-    end
-
-    describe "nested" do
-      it "string is still around" do |name|
-        name.must_equal "string"
-      end
-    end
-
-    describe "with multiple args" do
-      around { [ 1, 2 ] }
-
-      it "passes multiple args" do |a, b|
-        a.must_equal 1
-        b.must_equal 2
-      end
-    end
-  end
 end
