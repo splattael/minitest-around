@@ -1,6 +1,6 @@
 require './lib/minitest/around/version'
 
-Gem::Specification.new "minitest-around", MiniTest::Around::VERSION do |s|
+Gem::Specification.new "minitest-around", Minitest::Around::VERSION do |s|
   s.authors     = ["Peter Suschlik"]
   s.email       = ["peter-minitest-around@suschlik.de"]
   s.homepage    = "https://github.com/splattael/minitest-around"
@@ -9,7 +9,8 @@ Gem::Specification.new "minitest-around", MiniTest::Around::VERSION do |s|
   s.license     = 'MIT'
   s.files       = `git ls-files`.split("\n")
 
-  s.add_dependency 'minitest', '~> 4.7.5'
+  s.add_dependency 'minitest', '~> 5.0'
+
   s.add_development_dependency 'rdoc'
   s.add_development_dependency 'rake'
 end

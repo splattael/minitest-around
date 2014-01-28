@@ -3,7 +3,7 @@ require 'minitest/around/unit'
 
 $var = []
 
-class OuterNestedTest < MiniTest::Unit::TestCase
+class OuterNestedTest < Minitest::Test
   def setup
     $var << :before
   end
