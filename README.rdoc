@@ -2,7 +2,7 @@
 
 {<img src="https://secure.travis-ci.org/splattael/minitest-around.png?branch=master" alt="Build Status" />}[http://travis-ci.org/splattael/minitest-around] {<img src="https://badge.fury.io/rb/minitest-around.png" alt="Gem Version" />}[http://badge.fury.io/rb/minitest-around] {<img src="https://codeclimate.com/github/splattael/minitest-around.png" />}[https://codeclimate.com/github/splattael/minitest-around]
 
-Around block for minitest 4.7.X.
+Around block for minitest 5.X.
 
 Alternative for setup/teardown dance.
 
