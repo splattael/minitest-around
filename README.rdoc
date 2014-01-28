@@ -34,16 +34,6 @@ See examples[https://github.com/splattael/minitest-around/tree/master/examples] 
     end
   end
 
-  class PassArgsTest < Minitest::Test
-    def around
-      yield 1, 2
-    end
-
-    def test_passes_args(a, b)
-      assert_equal 3, a + b
-    end
-  end
-
 === Spec
 
   require 'minitest/autorun'
