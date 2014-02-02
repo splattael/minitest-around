@@ -1,4 +1,4 @@
-require 'minitest/autorun'
+require_relative 'helper'
 require 'minitest/around/unit'
 
 $var = []
