@@ -38,20 +38,20 @@ describe "Minitest Around" do
     let(:list) { [] }
     before { list << 1 }
     before { list << 2 }
+    after do
+      if @xxx == 1
+        list.must_equal [1, 2, 3, 4, 5, 9, 8, 7, 6]
+      elsif @xxx == 2
+        list.must_equal [1, 2, 3, 4, 5, 51, 9, 8, 7, 6]
+      else
+        raise
+      end
+    end
     after { list << 6 }
     around { |t| list << 3; t.call; list << 7 }
     before { list << 4 }
     around { |t| list << 5; t.call; list << 8 }
     after { list << 9 }
-    after do
-      if @xxx == 1
-        list.must_equal [1, 2, 3, 4, 5, 6, 7, 8, 9]
-      elsif @xxx == 2
-        list.must_equal [1, 2, 3, 4, 5, 51, 6, 7, 8, 9]
-      else
-        raise
-      end
-    end
 
     it "orders" do
       @xxx = 1

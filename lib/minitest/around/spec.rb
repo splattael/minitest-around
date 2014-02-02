@@ -23,7 +23,7 @@ class Minitest::Spec
     end
 
     def after(type=nil, &block)
-      include Module.new { define_method(:after) { super(); instance_exec(&block) } }
+      include Module.new { define_method(:teardown) { instance_exec(&block); super() } }
     end
   end
 end

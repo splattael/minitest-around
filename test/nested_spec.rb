@@ -9,7 +9,7 @@ describe 'Outer' do
   end
   after do
     $var << :after
-    $var.must_equal [:before, :ibefore, :begin, :ibegin, :during, :iend, :end, :iafter, :after]
+    $var.must_equal [:before, :begin, :ibefore, :ibegin, :during, :iend, :iafter, :end, :after]
   end
   around do |test|
     $var << :begin
