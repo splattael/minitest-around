@@ -11,10 +11,17 @@ class Minitest::Spec
     def around(&block)
       fib = nil
       before do
-        fib = Fiber.new { |context, resume| context.instance_exec(resume, &block) }
+        fib = Fiber.new do |context, resume|
+          begin
+            context.instance_exec(resume, &block)
+          rescue Object
+            fib = :failed
+            raise
+          end
+        end
         fib.resume(self, lambda { Fiber.yield })
       end
-      after  { fib.resume }
+      after  { fib.resume unless fib == :failed }
     end
 
     # Minitest does not support multiple before/after blocks
