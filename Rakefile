@@ -1,4 +1,6 @@
+require 'bundler/setup'
 require 'bundler/gem_tasks'
+require 'bump/tasks'
 
 desc 'Default: run unit tests.'
 task :default => :test
@@ -22,7 +24,7 @@ end
 
 # RDoc
 require 'rdoc/task'
-RDoc::Task.new(:rdoc) do |rdoc|
+RDoc::Task.new do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title    = 'mintest-around'
   rdoc.main     = 'Readme.md'
