@@ -1,1 +1,1 @@
-default: --tags ~@ignore
+default: --tags ~@ignore -f progress
