@@ -105,7 +105,5 @@ bundle exec rake test
 ## Release
 
 ```Bash
-edit lib/minitest/around/version.rb
-commit
-rake release
+rake bump:patch && rake release
 ```
