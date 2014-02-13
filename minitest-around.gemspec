@@ -1,6 +1,6 @@
 require './lib/minitest/around/version'
 
-Gem::Specification.new "minitest-around", Minitest::Around::VERSION do |s|
+Gem::Specification.new "minitest-around", MinitestAround::VERSION do |s|
   s.authors     = ["Peter Suschlik"]
   s.email       = ["peter-minitest-around@suschlik.de"]
   s.homepage    = "https://github.com/splattael/minitest-around"
@@ -14,4 +14,5 @@ Gem::Specification.new "minitest-around", Minitest::Around::VERSION do |s|
   s.add_development_dependency 'rdoc'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'bump'
+  s.add_development_dependency 'cucumber'
 end
