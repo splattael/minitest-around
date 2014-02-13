@@ -22,7 +22,7 @@ end
 
 # RDoc
 require 'rdoc/task'
-RDoc::Task.new(:rdoc) do |rdoc|
+RDoc::Task.new do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title    = 'mintest-around'
   rdoc.main     = 'README.md'
