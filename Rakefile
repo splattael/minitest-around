@@ -25,8 +25,8 @@ require 'rdoc/task'
 RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title    = 'mintest-around'
-  rdoc.main     = 'Readme.md'
-  rdoc.rdoc_files.include('Readme.md', 'LICENSE', 'lib/**/*.rb')
+  rdoc.main     = 'README.md'
+  rdoc.rdoc_files.include('README.md', 'LICENSE', 'lib/**/*.rb')
   rdoc.options << "--all"
   rdoc.options << "--markup markdown"
 end
