@@ -1,6 +1,6 @@
 # minitest-around
 
-[![Build Status](https://travis-ci.org/splattael/minitest-around.png)](https://travis-ci.org/splattael/minitest-around) [![Inline docs](http://inch-pages.github.io/github/splattael/minitest-around.png)](http://inch-pages.github.io/github/splattael/minitest-around)
+[![Build Status](https://travis-ci.org/splattael/minitest-around.png)](https://travis-ci.org/splattael/minitest-around) [![Inline docs](http://inch-ci.org/github/splattael/minitest-around.png)](http://inch-ci.org/github/splattael/minitest-around)
 
 Around block for minitest 5.X.
 
