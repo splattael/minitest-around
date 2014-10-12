@@ -1,7 +1,7 @@
 require 'minitest'
 require 'minitest/around/version'
 
-class Minitest::Test
+Minitest::Test.class_eval do
   alias_method :run_without_around, :run
   def run(*args)
     if defined?(around)
