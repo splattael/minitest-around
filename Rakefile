@@ -1,9 +1,10 @@
 require 'bundler/setup'
 require 'bundler/gem_tasks'
 require 'bump/tasks'
+require 'cucumber/rake/task'
 
 desc 'Default: run unit tests.'
-task :default => :test
+task :default => [:test, :features]
 
 # Test
 TEST_FILES = FileList.new('test/*_{test,spec}.rb')
@@ -22,6 +23,21 @@ Rake::TestTask.new(:"test:isolated") do |test|
   test.verbose = true
 end
 
+# Examples
+EXAMPLES = FileList["examples/*.rb"]
+desc "Run all examples"
+task :"test:examples" do
+  EXAMPLES.each do |example|
+    sh "bundle", "exec", "ruby", example
+  end
+end
+
+# Features
+Cucumber::Rake::Task.new(:features) do |t|
+  skip_tags = %w[rspec todo].map { |tag| "--tag ~@#{tag}" }.join(" ")
+  t.cucumber_opts = "features #{skip_tags}"
+end
+
 # RDoc
 require 'rdoc/task'
 RDoc::Task.new do |rdoc|
@@ -31,13 +47,4 @@ RDoc::Task.new do |rdoc|
   rdoc.rdoc_files.include('README.md', 'LICENSE', 'lib/**/*.rb')
   rdoc.options << "--all"
   rdoc.options << "--markup markdown"
-end
-
-# Examples
-EXAMPLES = FileList["examples/*.rb"]
-desc "Run all examples"
-task :"test:examples" do
-  EXAMPLES.each do |example|
-    sh "bundle", "exec", "ruby", example
-  end
 end
