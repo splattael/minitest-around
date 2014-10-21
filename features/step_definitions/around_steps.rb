@@ -4,7 +4,7 @@ Given(/^a file named "(.*?)" with:$/) do |filename, content|
   write_test_file(filename, content)
 end
 
-When(/^I run `ruby (.*?)`$/) do |filename|
+When(/^I run `rspec (.*?)`$/) do |filename|
   path = path_for(filename)
   @output = `ruby #{path}`
 end

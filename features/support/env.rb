@@ -11,6 +11,11 @@ class MyWorld
   end
 
   def write_test_file(filename, content)
+    # RSpec.describe -> describe
+    content.gsub!("RSpec.describe", "describe")
+    # example.run -> example.call
+    content.gsub!("example.run", "example.call")
+
     content = <<-RUBY + content
       require 'minitest/autorun'
       require "#{File.expand_path("../../../lib/minitest/around/spec", __FILE__)}"
