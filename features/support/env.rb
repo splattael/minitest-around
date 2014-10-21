@@ -1,7 +1,7 @@
 require 'minitest/spec'
 
 class MyWorld
-  extend Minitest::Assertions
+  include Minitest::Assertions
 
   attr_accessor :assertions
 
@@ -19,6 +19,8 @@ class MyWorld
     content = <<-RUBY + content
       require 'minitest/autorun'
       require "#{File.expand_path("../../../lib/minitest/around/spec", __FILE__)}"
+
+      require 'rspec/expectations/minitest_integration'
     RUBY
     write_file(filename, content)
   end

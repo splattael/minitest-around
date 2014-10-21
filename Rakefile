@@ -34,7 +34,8 @@ end
 
 # Features
 Cucumber::Rake::Task.new(:features) do |t|
-  t.cucumber_opts = "features"
+  skip_tags = %w[rspec todo].map { |tag| "--tag ~@#{tag}" }.join(" ")
+  t.cucumber_opts = "features #{skip_tags}"
 end
 
 # RDoc
