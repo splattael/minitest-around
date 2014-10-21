@@ -7,7 +7,7 @@ Minitest::Spec::DSL.class_eval do
   # - resume to call first part
   # - execute test
   # - resume fiber to execute last part
-  def around(&block)
+  def around(*args, &block)
     fib = nil
     before do
       fib = Fiber.new do |context, resume|
