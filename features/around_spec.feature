@@ -69,6 +69,7 @@ Feature: `around` hooks
       around example after
       """
 
+  @rspec
   Scenario: Access the example metadata
     Given a file named "example_spec.rb" with:
       """ruby
@@ -85,6 +86,7 @@ Feature: `around` hooks
     When I run `rspec example_spec.rb`
     Then the output should contain "this should show up in the output"
 
+  @rspec
   Scenario: Define a global `around` hook
     Given a file named "example_spec.rb" with:
       """ruby
@@ -143,6 +145,7 @@ Feature: `around` hooks
       around example after
       """
 
+  @todo
   Scenario: Context hooks are NOT wrapped by the `around` hook
     Given a file named "example_spec.rb" with:
       """ruby
@@ -176,6 +179,7 @@ Feature: `around` hooks
       .after context
       """
 
+  @rspec
   Scenario: Examples run by an `around` block are run in the configured context
     Given a file named "example_spec.rb" with:
       """ruby
@@ -200,6 +204,7 @@ Feature: `around` hooks
     When I run `rspec example_spec.rb`
     Then the output should contain "1 example, 0 failure"
 
+  @rspec
   Scenario: Implicitly pending examples are detected as Not yet implemented
     Given a file named "example_spec.rb" with:
       """ruby
@@ -221,6 +226,7 @@ Feature: `around` hooks
       """
 
 
+  @rspec
   Scenario: Explicitly pending examples are detected as pending
     Given a file named "example_spec.rb" with:
       """ruby
