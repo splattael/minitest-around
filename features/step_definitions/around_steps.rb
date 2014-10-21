@@ -10,9 +10,9 @@ When(/^I run `ruby (.*?)`$/) do |filename|
 end
 
 Then(/^the output should contain:$/) do |content|
-  assert_include @output, content
+  assert_includes @output, content
 end
 
 Then(/^the output should contain "(.*?)"$/) do |content|
-  assert_include @output, content
+  assert_includes @output, content
 end
