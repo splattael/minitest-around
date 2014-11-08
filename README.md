@@ -40,6 +40,7 @@ end
 
 ### Spec
 
+<!-- example --!>
 ```Ruby
 require 'minitest/autorun'
 require 'minitest/around/spec'
@@ -48,7 +49,7 @@ require 'tmpdir'
 describe "inside new directory" do
   around do |test|
     Dir.mktmpdir do |dir|
-      $dir = dir
+      @dir = dir
       Dir.chdir(dir) do
         test.call
       end
@@ -56,10 +57,15 @@ describe "inside new directory" do
   end
 
   it "is in new directory" do
-    assert_equal $dir, Dir.pwd
+    assert_equal @dir, Dir.pwd.sub("/private/var/", "/var/")
   end
 end
 ```
+<!-- example --!>
+
+## Multiple before/after blocks
+
+Minitest-around also enables the use of multiple before/after blocks, which normally don't work in minitest.
 
 ## Caveats
 
