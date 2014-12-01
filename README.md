@@ -40,7 +40,7 @@ end
 
 ### Spec
 
-<!-- example --!>
+<!-- example -->
 ```Ruby
 require 'minitest/autorun'
 require 'minitest/around/spec'
@@ -61,7 +61,7 @@ describe "inside new directory" do
   end
 end
 ```
-<!-- example --!>
+<!-- example -->
 
 ## Multiple before/after blocks
 
