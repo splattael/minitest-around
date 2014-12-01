@@ -40,7 +40,6 @@ end
 
 ### Spec
 
-<!-- example --!>
 ```Ruby
 require 'minitest/autorun'
 require 'minitest/around/spec'
@@ -61,7 +60,6 @@ describe "inside new directory" do
   end
 end
 ```
-<!-- example --!>
 
 ## Multiple before/after blocks
 
@@ -78,7 +76,6 @@ Minitest-around also enables the use of multiple before/after blocks, which norm
 
 Please see the [mt4](https://github.com/splattael/minitest-around/tree/mt4) branch
 for `minitest` 4.7.X support.
-
 
 ## License
 
