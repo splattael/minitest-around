@@ -1,6 +1,5 @@
 require 'bundler/setup'
 require 'bundler/gem_tasks'
-require 'bump/tasks'
 require 'cucumber/rake/task'
 
 desc 'Default: run unit tests.'

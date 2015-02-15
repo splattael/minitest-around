@@ -13,7 +13,6 @@ Gem::Specification.new "minitest-around", MinitestAround::VERSION do |s|
 
   s.add_development_dependency 'rdoc'
   s.add_development_dependency 'rake'
-  s.add_development_dependency 'bump'
   s.add_development_dependency 'cucumber'
   s.add_development_dependency 'rspec-expectations'
 end
