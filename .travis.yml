@@ -1,14 +1,22 @@
 language: ruby
+sudo: false
+cache: bundler
 rvm:
   - 1.9.3
   - 2.0
   - 2.1
+  - 2.2
+  - ruby-head
   - jruby
-  - rbx
+  - jruby-head
+  - rbx-2
 env:
   global:
-    - JRUBY_OPTS='-J-XX:+TieredCompilation -J-XX:TieredStopAtLevel=1 -J-Djruby.compile.mode=OFF -J-Djruby.compile.invokedynamic=false'
+    - CODECLIMATE_REPO_TOKEN=e2647eb4bb8263157b9d99d9f79a49f8262a7e5ed11b07bdfbd312afdb43c2fa
+    - JRUBY_OPTS='--dev -J-Xmx1024M'
 matrix:
   allow_failures:
-    - rvm: rbx
+    - rvm: ruby-head
+    - rvm: jruby-head
+    - rvm: rbx-2
   fast_finish: true
