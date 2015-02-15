@@ -1,4 +1,5 @@
 require 'minitest'
+require 'minitest/spec'
 
 require 'minitest/around/version'
 require 'minitest/around/unit'
