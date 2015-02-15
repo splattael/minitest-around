@@ -1,4 +1,3 @@
-require 'minitest'
 require 'minitest/test'
 
 require 'minitest/around/version'
