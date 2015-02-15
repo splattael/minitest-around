@@ -91,6 +91,7 @@ for `minitest` 4.7.X support.
 ## [Contributors](https://github.com/splattael/minitest-around/graphs/contributors)
 
 * [Michael Grosser](https://github.com/grosser)
+* [Hendra Uzia](https://github.com/hendrauzia)
 * [Rick Martínez](https://github.com/rickmzp)
 * [Philip Nelson](https://github.com/pnelson)
 
