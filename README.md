@@ -1,6 +1,21 @@
+[github]: https://github.com/neopoly/minitest-around
+[doc]: http://rubydoc.info/github/neopoly/minitest-around/master/file/README.md
+[gem]: https://rubygems.org/gems/minitest-around
+[travis]: https://travis-ci.org/neopoly/minitest-around
+[codeclimate]: https://codeclimate.com/github/neopoly/minitest-around
+[inchpages]: https://inch-ci.org/github/neopoly/minitest-around
+
 # minitest-around
 
-[![Build Status](https://travis-ci.org/splattael/minitest-around.png)](https://travis-ci.org/splattael/minitest-around) [![Inline docs](http://inch-ci.org/github/splattael/minitest-around.png)](http://inch-ci.org/github/splattael/minitest-around)
+[![Travis](https://img.shields.io/travis/neopoly/minitest-around.svg?branch=master)][travis]
+[![Gem Version](https://img.shields.io/gem/v/minitest-around.svg)][gem]
+[![Code Climate](https://img.shields.io/codeclimate/github/neopoly/minitest-around.svg)][codeclimate]
+[![Test Coverage](https://codeclimate.com/github/neopoly/minitest-around/badges/coverage.svg)][codeclimate]
+[![Inline docs](https://inch-ci.org/github/neopoly/minitest-around.svg?branch=master&style=flat)][inchpages]
+
+[Gem][gem] |
+[Source][github] |
+[Documentation][doc]
 
 Around block for minitest 5.X.
 
