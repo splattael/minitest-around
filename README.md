@@ -1,17 +1,17 @@
-[github]: https://github.com/neopoly/minitest-around
-[doc]: http://rubydoc.info/github/neopoly/minitest-around/master/file/README.md
+[github]: https://github.com/splattael/minitest-around
+[doc]: http://rubydoc.info/github/splattael/minitest-around/master/file/README.md
 [gem]: https://rubygems.org/gems/minitest-around
-[travis]: https://travis-ci.org/neopoly/minitest-around
-[codeclimate]: https://codeclimate.com/github/neopoly/minitest-around
-[inchpages]: https://inch-ci.org/github/neopoly/minitest-around
+[travis]: https://travis-ci.org/splattael/minitest-around
+[codeclimate]: https://codeclimate.com/github/splattael/minitest-around
+[inchpages]: https://inch-ci.org/github/splattael/minitest-around
 
 # minitest-around
 
-[![Travis](https://img.shields.io/travis/neopoly/minitest-around.svg?branch=master)][travis]
+[![Travis](https://img.shields.io/travis/splattael/minitest-around.svg?branch=master)][travis]
 [![Gem Version](https://img.shields.io/gem/v/minitest-around.svg)][gem]
-[![Code Climate](https://img.shields.io/codeclimate/github/neopoly/minitest-around.svg)][codeclimate]
-[![Test Coverage](https://codeclimate.com/github/neopoly/minitest-around/badges/coverage.svg)][codeclimate]
-[![Inline docs](https://inch-ci.org/github/neopoly/minitest-around.svg?branch=master&style=flat)][inchpages]
+[![Code Climate](https://img.shields.io/codeclimate/github/splattael/minitest-around.svg)][codeclimate]
+[![Test Coverage](https://codeclimate.com/github/splattael/minitest-around/badges/coverage.svg)][codeclimate]
+[![Inline docs](https://inch-ci.org/github/splattael/minitest-around.svg?branch=master&style=flat)][inchpages]
 
 [Gem][gem] |
 [Source][github] |
@@ -20,10 +20,6 @@
 Around block for minitest 5.X.
 
 Alternative for setup/teardown dance.
-
-[Gem](https://rubygems.org/gems/minitest-around) |
-[Source](https://github.com/splattael/minitest-around) |
-[RDoc](http://rubydoc.info/github/splattael/minitest-around/master/file/README.md)
 
 ## Installation
 
