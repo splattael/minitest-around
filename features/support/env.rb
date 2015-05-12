@@ -15,12 +15,12 @@ class MyWorld
     content.gsub!("RSpec.describe", "describe")
     # example.run -> example.call
     content.gsub!("example.run", "example.call")
+    # expect(..).to .. -> expect(..).must_equal ..
+    content.gsub!("to eq", "must_equal")
 
     content = <<-RUBY + content
       require 'minitest/autorun'
-      require "#{File.expand_path("../../../lib/minitest/around/spec", __FILE__)}"
-
-      require 'rspec/expectations/minitest_integration'
+      require '#{File.expand_path("../../../lib/minitest/around/spec", __FILE__)}'
     RUBY
     write_file(filename, content)
   end
