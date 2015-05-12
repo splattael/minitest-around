@@ -10,7 +10,7 @@ When(/^I run `rspec.*?(\S+)`$/) do |filename|
 end
 
 Then(/^the output should contain:$/) do |content|
-  assert_includes @output, content
+  assert_includes @output, content, @output
 end
 
 Then(/^the output should contain "(.*?)"$/) do |content|
