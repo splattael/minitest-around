@@ -86,6 +86,29 @@ Feature: `around` hooks
     When I run `rspec example_spec.rb`
     Then the output should contain "this should show up in the output"
 
+  Scenario: An around hook continues to run even if the example throws an exception
+    Given a file named "example_spec.rb" with:
+      """ruby
+        RSpec.describe "something" do
+          around(:example) do |example|
+            puts "around example setup"
+            example.run
+            puts "around example cleanup"
+          end
+
+          it "still executes the entire around hook" do
+            fail "the example blows up"
+          end
+        end
+      """
+    When I run `rspec example_spec.rb`
+    Then the output should contain "1 example, 1 failure"
+    And the output should contain:
+      """
+      around example setup
+      around example cleanup
+      """
+
   @rspec
   Scenario: Define a global `around` hook
     Given a file named "example_spec.rb" with:
@@ -220,9 +243,11 @@ Feature: `around` hooks
     Then the output should contain "1 example, 0 failures, 1 pending"
     And the output should contain:
       """
-      Pending:
-        implicit pending example should be detected as Not yet implemented
-          # Not yet implemented
+      Pending: (Failures listed here are expected and do not affect your suite's status)
+
+        1) implicit pending example should be detected as Not yet implemented
+           # Not yet implemented
+           # ./example_spec.rb:6
       """
 
 
@@ -245,8 +270,10 @@ Feature: `around` hooks
     Then the output should contain "1 example, 0 failures, 1 pending"
     And the output should contain:
       """
-        explicit pending example should be detected as pending
-          # No reason given
+      Pending: (Failures listed here are expected and do not affect your suite's status)
+
+        1) explicit pending example should be detected as pending
+           # No reason given
       """
 
   Scenario: Multiple `around` hooks in the same scope
