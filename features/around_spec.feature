@@ -102,7 +102,7 @@ Feature: `around` hooks
         end
       """
     When I run `rspec example_spec.rb`
-    Then the output should contain "1 example, 1 failure"
+    Then the output should contain "1 example, 1 error"
     And the output should contain:
       """
       around example setup
