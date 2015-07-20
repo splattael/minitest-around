@@ -1,36 +1,35 @@
 require_relative 'helper'
 require 'minitest/around/unit'
 
-$var = []
-
 class OuterNestedTest < Minitest::Test
+  @@var = []
   def setup
-    $var << :before
+    @@var << :before
   end
   def teardown
-    $var << :after
-    $var.must_equal [:before, :ibefore, :begin, :ibegin, :during, :iend, :end, :iafter, :after]
+    @@var << :after
+    @@var.must_equal [:before, :ibefore, :begin, :ibegin, :during, :iend, :end, :iafter, :after]
   end
   def around
-    $var << :begin
+    @@var << :begin
     yield
-    $var << :end
+    @@var << :end
   end
 end
 
 class InnerNestedTest < OuterNestedTest
   def setup
-    $var << :ibefore
+    @@var << :ibefore
   end
   def teardown
-    $var << :iafter
+    @@var << :iafter
   end
   def around
-    $var << :ibegin
+    @@var << :ibegin
     yield
-    $var << :iend
+    @@var << :iend
   end
   def test_nesting
-    $var << :during
+    @@var << :during
   end
 end

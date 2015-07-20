@@ -3,7 +3,7 @@ require 'bundler/gem_tasks'
 require 'cucumber/rake/task'
 
 desc 'Default: run unit tests.'
-task :default => [:test, :features]
+task :default => [:test, :"test:isolated", :features]
 
 # Test
 TEST_FILES = FileList.new('test/*_{test,spec}.rb')

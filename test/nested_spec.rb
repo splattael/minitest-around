@@ -1,36 +1,36 @@
 require_relative 'helper'
 require 'minitest/around'
 
-$var = []
-
 describe 'Outer' do
+  let(:var) { [] }
+
   before do
-    $var << :before
+    var << :before
   end
   after do
-    $var << :after
-    $var.must_equal [:before, :begin, :ibefore, :ibegin, :during, :iend, :iafter, :end, :after]
+    var << :after
+    var.must_equal [:before, :begin, :ibefore, :ibegin, :during, :iend, :iafter, :end, :after]
   end
   around do |test|
-    $var << :begin
+    var << :begin
     test.call
-    $var << :end
+    var << :end
   end
 
   describe 'Inner' do
     before do
-      $var << :ibefore
+      var << :ibefore
     end
     after do
-      $var << :iafter
+      var << :iafter
     end
     around do |test|
-      $var << :ibegin
+      var << :ibegin
       test.call
-      $var << :iend
+      var << :iend
     end
     it 'testing' do
-      $var << :during
+      var << :during
     end
   end
 end
