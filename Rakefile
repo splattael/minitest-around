@@ -20,6 +20,7 @@ Rake::TestTask.new(:"test:isolated") do |test|
   test.test_files = TEST_FILES
   test.libs << 'test'
   test.verbose = true
+  test.warning = true
 end
 
 # Examples
