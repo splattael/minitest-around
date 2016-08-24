@@ -24,10 +24,12 @@ Minitest::Spec::DSL.class_eval do
   end
 
   # Minitest does not support multiple before/after blocks
+  remove_method :before
   def before(type=nil, &block)
     include Module.new { define_method(:setup) { super(); instance_exec(&block) } }
   end
 
+  remove_method :after
   def after(type=nil, &block)
     include Module.new { define_method(:teardown) { instance_exec(&block); super() } }
   end
