@@ -29,8 +29,6 @@ gem install minitest-around
 
 ## Usage
 
-See [examples](/examples) directory for some example usage..
-
 ### Unit tests
 
 ```Ruby
