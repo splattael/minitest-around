@@ -1,7 +1,7 @@
 require './lib/minitest/around/version'
 
 Gem::Specification.new "minitest-around", MinitestAround::VERSION do |s|
-  s.authors     = ["Peter Suschlik"]
+  s.authors     = ["Peter Leitzen"]
   s.email       = ["peter-minitest-around@suschlik.de"]
   s.homepage    = "https://github.com/splattael/minitest-around"
   s.summary     = "Around block for minitest."

@@ -95,7 +95,7 @@ for `minitest` 4.7.X support.
 
 ## Authors
 
-* [Peter Suschlik](https://github.com/splattael)
+* [Peter Leitzen](https://github.com/splattael)
 
 ## [Contributors](https://github.com/splattael/minitest-around/graphs/contributors)
 
