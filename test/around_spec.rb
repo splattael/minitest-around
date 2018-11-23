@@ -98,7 +98,6 @@ describe "Minitest Around" do
           it("x") {}
         end
       RUBY
-
       output.must_include("ENSURE")
     end
   end

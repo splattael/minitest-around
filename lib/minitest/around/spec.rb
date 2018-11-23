@@ -31,6 +31,14 @@ Minitest::Spec::DSL.class_eval do
 
   remove_method :after
   def after(type=nil, &block)
-    include Module.new { define_method(:teardown) { instance_exec(&block); super() } }
+    include(Module.new do
+      define_method(:teardown) do
+        begin
+          instance_exec(&block)
+        ensure
+          super()
+        end
+      end
+    end)
   end
 end
