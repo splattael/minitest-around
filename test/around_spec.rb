@@ -82,6 +82,25 @@ describe "Minitest Around" do
       output.wont_include "FiberError"
     end
   end
+
+  describe "ensure blocks in around" do
+    it "runs the ensure block even if another teardown fails" do
+      output = spawn_test <<-RUBY
+        describe "x" do
+          around do |b|
+            begin
+              b.call
+            ensure
+              puts "ENSURE"
+            end
+          end
+          after { raise }
+          it("x") {}
+        end
+      RUBY
+      output.must_include("ENSURE")
+    end
+  end
 end
 
 def spawn_test(code)
