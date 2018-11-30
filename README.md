@@ -2,20 +2,14 @@
 [doc]: http://rubydoc.info/github/splattael/minitest-around/master/file/README.md
 [gem]: https://rubygems.org/gems/minitest-around
 [travis]: https://travis-ci.org/splattael/minitest-around
-[codeclimate]: https://codeclimate.com/github/splattael/minitest-around
-[inchpages]: https://inch-ci.org/github/splattael/minitest-around
 
 # minitest-around
 
 [![Travis](https://img.shields.io/travis/splattael/minitest-around.svg?branch=master)][travis]
 [![Gem Version](https://img.shields.io/gem/v/minitest-around.svg)][gem]
-[![Code Climate](https://img.shields.io/codeclimate/github/splattael/minitest-around.svg)][codeclimate]
-[![Test Coverage](https://codeclimate.com/github/splattael/minitest-around/badges/coverage.svg)][codeclimate]
-[![Inline docs](https://inch-ci.org/github/splattael/minitest-around.svg?branch=master&style=flat)][inchpages]
 
 [Gem][gem] |
-[Source][github] |
-[Documentation][doc]
+[Source][github]
 
 Around block for minitest 5.X.
 
@@ -121,7 +115,6 @@ bundle exec rake test
 ## Release
 
 ```Bash
-edit lib/minitest/around/version.rb
-git commit
-rake release
+bundle exec rake bump:{patch|minor|major}
+bundle exec rake release
 ```
