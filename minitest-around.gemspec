@@ -7,11 +7,10 @@ Gem::Specification.new "minitest-around", MinitestAround::VERSION do |s|
   s.summary     = "Around block for minitest."
   s.description = "Alternative for setup/teardown dance."
   s.license     = 'MIT'
-  s.files       = `git ls-files`.split("\n")
+  s.files       = `git ls-files lib LICENSE README.md`.split("\n")
 
   s.add_dependency 'minitest', '~> 5.0'
 
-  s.add_development_dependency 'rdoc'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'cucumber', '~> 2.4.0'
   s.add_development_dependency 'bump'

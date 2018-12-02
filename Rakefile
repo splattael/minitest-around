@@ -38,14 +38,3 @@ Cucumber::Rake::Task.new(:features) do |t|
   skip_tags = %w[rspec todo].map { |tag| "--tag ~@#{tag}" }.join(" ")
   t.cucumber_opts = "features #{skip_tags}"
 end
-
-# RDoc
-require 'rdoc/task'
-RDoc::Task.new do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'mintest-around'
-  rdoc.main     = 'README.md'
-  rdoc.rdoc_files.include('README.md', 'LICENSE', 'lib/**/*.rb')
-  rdoc.options << "--all"
-  rdoc.options << "--markup markdown"
-end
