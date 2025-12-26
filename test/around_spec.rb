@@ -16,7 +16,7 @@ describe "Minitest Around" do
     end
 
     it "runs around" do
-      $before.must_equal true
+      _($before).must_equal true
     end
   end
 
@@ -30,7 +30,7 @@ describe "Minitest Around" do
     end
 
     it "stays in context" do
-      @x.must_equal 2
+      _(@x).must_equal 2
     end
   end
 
@@ -40,9 +40,9 @@ describe "Minitest Around" do
     before { list << 2 }
     after do
       if @xxx == 1
-        list.must_equal [1, 2, 3, 4, 5, 9, 8, 7, 6]
+        _(list).must_equal [1, 2, 3, 4, 5, 9, 8, 7, 6]
       elsif @xxx == 2
-        list.must_equal [1, 2, 3, 4, 5, 51, 9, 8, 7, 6]
+        _(list).must_equal [1, 2, 3, 4, 5, 51, 9, 8, 7, 6]
       else
         raise
       end
@@ -55,7 +55,7 @@ describe "Minitest Around" do
 
     it "orders" do
       @xxx = 1
-      list.must_equal [1, 2, 3, 4, 5]
+      _(list).must_equal [1, 2, 3, 4, 5]
     end
 
     describe "more nesting fun" do
@@ -63,7 +63,7 @@ describe "Minitest Around" do
 
       it "orders" do
         @xxx = 2
-        list.must_equal [1, 2, 3, 4, 5, 51]
+        _(list).must_equal [1, 2, 3, 4, 5, 51]
       end
     end
   end
@@ -78,8 +78,8 @@ describe "Minitest Around" do
         end
       RUBY
 
-      output.must_include "ArgumentError: ArgumentError"
-      output.wont_include "FiberError"
+      _(output).must_include "ArgumentError: ArgumentError"
+      _(output).wont_include "FiberError"
     end
   end
 
@@ -98,7 +98,7 @@ describe "Minitest Around" do
           it("x") {}
         end
       RUBY
-      output.must_include("ENSURE")
+      _(output).must_include('ENSURE')
     end
   end
 end

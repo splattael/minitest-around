@@ -9,7 +9,7 @@ Gem::Specification.new "minitest-around", MinitestAround::VERSION do |s|
   s.license     = 'MIT'
   s.files       = `git ls-files lib LICENSE README.md`.split("\n")
 
-  s.add_dependency 'minitest', '~> 5.0'
+  s.add_dependency 'minitest', '> 5.0', '< 7.0'
 
   s.add_development_dependency 'rake'
   s.add_development_dependency 'cucumber', '~> 2.4.0'
