@@ -12,6 +12,6 @@ Gem::Specification.new "minitest-around", MinitestAround::VERSION do |s|
   s.add_dependency 'minitest', '> 5.0', '< 7.0'
 
   s.add_development_dependency 'rake'
-  s.add_development_dependency 'cucumber', '~> 2.4.0'
+  s.add_development_dependency 'cucumber'
   s.add_development_dependency 'bump'
 end
