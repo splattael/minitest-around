@@ -8,7 +8,7 @@ class OuterNestedTest < Minitest::Test
   end
   def teardown
     @@var << :after
-    @@var.must_equal [:before, :ibefore, :begin, :ibegin, :during, :iend, :end, :iafter, :after]
+    _(@@var).must_equal %i[before ibefore begin ibegin during iend end iafter after]
   end
   def around
     @@var << :begin
