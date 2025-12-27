@@ -1,4 +1,4 @@
-require_relative 'helper'
+require_relative 'test_helper'
 require 'minitest/around/unit'
 
 class OuterNestedTest < Minitest::Test

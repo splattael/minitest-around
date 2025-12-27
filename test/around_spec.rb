@@ -1,4 +1,4 @@
-require_relative 'helper'
+require_relative 'test_helper'
 require 'minitest/around/spec'
 
 describe "Minitest Around" do
@@ -106,7 +106,7 @@ end
 def spawn_test(code)
   Tempfile.open("XX") do |f|
     f.write <<-RUBY
-      require "#{File.expand_path("../helper", __FILE__)}"
+      require "#{File.expand_path("../test_helper", __FILE__)}"
       require 'minitest/around/spec'
       #{code}
     RUBY
