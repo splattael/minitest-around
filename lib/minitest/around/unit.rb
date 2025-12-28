@@ -2,15 +2,14 @@ require 'minitest/test'
 
 require 'minitest/around/version'
 
-Minitest::Test.class_eval do
-  alias_method :run_without_around, :run
+Minitest::Test.prepend(Module.new do
   def run(*args)
     if defined?(around)
       result = nil
-      around { result = run_without_around(*args) }
+      around { result = super(*args) }
       result
     else
-      run_without_around(*args)
+      super(*args)
     end
   end
-end
+end)
