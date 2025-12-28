@@ -4,37 +4,32 @@ require 'cucumber/rake/task'
 require 'bump/tasks'
 
 desc 'Default: run unit tests.'
-task :default => [:test, :"test:isolated", :features]
+task default: ["test", "features"]
 
 # Test
-TEST_FILES = FileList.new('test/*_{test,spec}.rb')
-
 desc "Run all tests"
 task :test do
-  TEST_FILES.each do |test_file|
-    sh "bundle", "exec", "rake", "test:isolated", "TEST=#{test_file}"
-  end
+  sh "forking-test-runner test/ --quiet"
 end
 
-require 'rake/testtask'
-Rake::TestTask.new(:"test:isolated") do |test|
-  test.test_files = TEST_FILES
-  test.libs << 'test'
-  test.verbose = true
-  test.warning = true
-end
-
-# Examples
-EXAMPLES = FileList["examples/*.rb"]
 desc "Run all examples"
-task :"test:examples" do
-  EXAMPLES.each do |example|
-    sh "bundle", "exec", "ruby", example
+task "test:examples" do
+  FileList["examples/*.rb"].each do |example|
+    sh "ruby", example
   end
 end
 
-# Features
+# features
 Cucumber::Rake::Task.new(:features) do |t|
-  skip_tags = %w[rspec todo].map { |tag| "--tag not @#{tag}" }.join(" ")
-  t.cucumber_opts = ["features"] << skip_tags
+  # TODO: fix these tags
+  skip_tags = %w[rspec todo].map { |tag| "--tag 'not @#{tag}'" }.join(" ")
+  t.cucumber_opts = ["features", skip_tags, "--publish-quiet"]
+end
+
+desc "bundle all gemfiles/ CMD=install"
+task :bundle do
+  extra = ENV["CMD"] || "install"
+  Bundler.with_original_env do
+    Dir["{gemfiles/*.gemfile,Gemfile}"].reverse.each { |gemfile| sh "BUNDLE_GEMFILE=#{gemfile} bundle #{extra}" }
+  end
 end

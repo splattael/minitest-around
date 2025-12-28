@@ -1,4 +1,4 @@
-require_relative 'helper'
+require_relative 'test_helper'
 require 'minitest/around'
 
 describe 'Outer' do
