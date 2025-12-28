@@ -1,11 +1,9 @@
 [github]: https://github.com/splattael/minitest-around
 [doc]: http://rubydoc.info/github/splattael/minitest-around/master/file/README.md
 [gem]: https://rubygems.org/gems/minitest-around
-[travis]: https://travis-ci.org/splattael/minitest-around
 
 # minitest-around
 
-[![Travis](https://img.shields.io/travis/splattael/minitest-around.svg?branch=master)][travis]
 [![Gem Version](https://img.shields.io/gem/v/minitest-around.svg)][gem]
 
 [Gem][gem] |
