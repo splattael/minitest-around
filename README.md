@@ -11,7 +11,7 @@
 [Gem][gem] |
 [Source][github]
 
-Around block for minitest 5.X.
+Around block for minitest 5.X and later.
 
 Alternative for setup/teardown dance.
 
@@ -75,9 +75,9 @@ Minitest-around also enables the use of multiple before/after blocks, which norm
  - Test bodies won't be run if you don't test.call inside +around+.
  - around runs inside a Fiber, so use `Thread.get_thread_local` / `set_thread_local` instead of `Thread.current.[]`
 
-### Minitest 5.X only
+### Minitest 5.X and later
 
-`minitest-around` currently supports only `minitest` 5.X.
+`minitest-around` currently supports only `minitest` 5.X and later.
 
 Please see the [mt4](https://github.com/splattael/minitest-around/tree/mt4) branch
 for `minitest` 4.7.X support.
