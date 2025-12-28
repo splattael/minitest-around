@@ -38,8 +38,7 @@ GEM
     cucumber-messages (31.1.0)
     cucumber-tag-expressions (8.1.0)
     diff-lcs (1.6.2)
-    ffi (1.17.2-arm64-darwin)
-    ffi (1.17.2-x86_64-linux-gnu)
+    ffi (1.17.2)
     forking_test_runner (1.16.0)
       benchmark (>= 0.5.0)
       parallel_tests (>= 1.3.7)
@@ -65,10 +64,11 @@ PLATFORMS
 DEPENDENCIES
   bump
   cucumber
+  ffi
   forking_test_runner
   minitest (~> 6.0.0)
   minitest-around!
   rake
 
 BUNDLED WITH
-   2.4.10
+  4.0.3
