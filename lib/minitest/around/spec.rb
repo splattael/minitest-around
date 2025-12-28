@@ -8,6 +8,7 @@ Minitest::Spec::DSL.class_eval do
   # - execute test
   # - resume fiber to execute last part
   def around(*args, &block)
+    raise ArgumentError, "only :each, :example, or no argument are supported" if args - [:each, :example] != []
     fib = nil
     before do
       fib = Fiber.new do |context, resume|
@@ -20,7 +21,7 @@ Minitest::Spec::DSL.class_eval do
       end
       fib.resume(self, lambda { Fiber.yield })
     end
-    after  { fib.resume unless fib == :failed }
+    after  { fib.resume if fib && fib != :failed }
   end
 
   # Minitest does not support multiple before/after blocks

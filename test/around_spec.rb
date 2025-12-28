@@ -69,7 +69,7 @@ describe "Minitest Around" do
   end
 
   describe "fail" do
-    it "does not fail with fiber error" do
+    it "does not fail with fiber error when around fails" do
       output = spawn_test <<-RUBY
         describe "x" do
           around { raise ArgumentError }
@@ -80,6 +80,32 @@ describe "Minitest Around" do
 
       _(output).must_include "ArgumentError: ArgumentError"
       _(output).wont_include "FiberError"
+    end
+
+    it "does not fail when before never got called" do
+      output = spawn_test <<-RUBY
+        describe "x" do
+          def setup
+            raise ArgumentError
+          end
+          around { puts 1 }
+          after { puts "AFTER" }
+          it("x") { }
+        end
+      RUBY
+
+      _(output).must_include "ArgumentError: ArgumentError"
+      _(output).wont_include "FiberError"
+    end
+
+    it "fails when trying to use :all" do
+      output = spawn_test <<-RUBY
+        describe "x" do
+          around(:all) { puts 1 }
+          it("x") { }
+        end
+      RUBY
+      _(output).must_include "only :each"
     end
   end
 
@@ -104,13 +130,13 @@ describe "Minitest Around" do
 end
 
 def spawn_test(code)
-  Tempfile.open("XX") do |f|
+  Tempfile.open do |f|
     f.write <<-RUBY
       require "#{File.expand_path("../test_helper", __FILE__)}"
       require 'minitest/around/spec'
       #{code}
     RUBY
     f.close
-    `ruby #{f.path}`
+    `ruby #{f.path} 2>&1`
   end
 end
